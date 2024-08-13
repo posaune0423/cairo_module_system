@@ -2,5 +2,5 @@
 version = 1
 
 [[package]]
-name = "cairo_module_system"
+name = "fuga_models"
 version = "0.1.0"

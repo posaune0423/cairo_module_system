@@ -1,0 +1,13 @@
+[workspace]
+members = ["core/models", "core/utils", "core/world"]
+
+
+[workspace.package]
+name = "protocol"
+description = "Protocol"
+cairo-version = "=2.7.0"
+edition = "2024_07"
+version = "0.1.0"
+
+[workspace.dependencies]
+dojo = { git = "https://github.com/dojoengine/dojo", tag = "v1.0.0-alpha.5" }

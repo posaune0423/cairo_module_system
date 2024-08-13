@@ -1,0 +1,6 @@
+[world]
+name = "protocol"
+seed = "protocol"
+
+[namespace]
+default = "protocol"
