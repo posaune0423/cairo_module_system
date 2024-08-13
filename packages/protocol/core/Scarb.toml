@@ -5,8 +5,6 @@ description.workspace = true
 cairo-version.workspace = true
 edition.workspace = true
 
-[cairo]
-sierra-replace-ids = true
 
 [lib]
 

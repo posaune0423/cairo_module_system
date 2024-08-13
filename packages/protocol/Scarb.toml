@@ -1,6 +1,8 @@
 [workspace]
 members = ["core/models", "core/utils", "core/world"]
 
+# [cairo]
+# sierra-replace-ids = true
 
 [workspace.package]
 name = "protocol"

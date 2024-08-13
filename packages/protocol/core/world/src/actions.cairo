@@ -1,5 +1,4 @@
 use dojo::world::{IWorldDispatcher, IWorldDispatcherTrait};
-use models::{direction::Direction, position::Position};
 
 #[dojo::interface]
 pub trait IActions<TContractState> {
@@ -10,23 +9,15 @@ pub trait IActions<TContractState> {
 pub mod actions {
     use super::IActions;
     use starknet::{ContractAddress, get_caller_address};
+    use models::{position::{Position, Vec2}, moves::Moves, direction::Direction};
+
 
     #[abi(embed_v0)]
     impl ActionsImpl of IActions<ContractState> {
         fn spawn(ref world: IWorldDispatcher) {
             let player = get_caller_address();
-            self.set_default_position(player, world);
+            println!("Player: {:?}", player);
 
-            println!("Spawn!");
-        }
-    }
-
-
-    #[generate_trait]
-    impl InternalImpl of InternalUtils {
-        fn set_default_position(
-            self: @ContractState, player: ContractAddress, world: IWorldDispatcher
-        ) {
             set!(
                 world,
                 (
@@ -34,6 +25,8 @@ pub mod actions {
                     Position { player, vec: Vec2 { x: 10, y: 10 } },
                 )
             );
+
+            println!("Spawn!");
         }
     }
 }
