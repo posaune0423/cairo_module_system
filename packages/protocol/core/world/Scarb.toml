@@ -1,14 +1,14 @@
 [package]
-name = "world"
+name = "protocol_world"
 description = "protocol core world contract"
-version.workspace = true
-cairo-version.workspace = true
-edition.workspace = true
+cairo-version = "=2.7.0"
+edition = "2024_07"
+version = "0.1.0"
 
 
-[lib]
+[[target.dojo]]
+build-external-contracts = []
 
 [dependencies]
-dojo.workspace = true
-models = { path = "../models" }
-utils = { path = "../utils" }
+protocol = { path = "../../core" }
+dojo = { git = "https://github.com/dojoengine/dojo", tag = "v1.0.0-alpha.12" }

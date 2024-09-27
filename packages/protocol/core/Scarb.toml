@@ -1,12 +1,11 @@
 [package]
-name.workspace = true
-version.workspace = true
-description.workspace = true
-cairo-version.workspace = true
-edition.workspace = true
-
-
-[lib]
+name = "protocol"
+description = "Protocol"
+cairo-version = "=2.7.0"
+edition = "2024_07"
+version = "0.1.0"
 
 [dependencies]
-dojo.workspace = true
+dojo = { git = "https://github.com/dojoengine/dojo", tag = "v1.0.0-alpha.12" }
+
+[lib]
